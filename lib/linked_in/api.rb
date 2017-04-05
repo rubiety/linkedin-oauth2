@@ -39,6 +39,7 @@ module LinkedIn
     def_delegators :@companies, :company,
                                 :company_search,
                                 :follow_company,
+                                :company_update,
                                 :company_updates,
                                 :unfollow_company,
                                 :add_company_share,

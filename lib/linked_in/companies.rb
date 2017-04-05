@@ -46,6 +46,22 @@ module LinkedIn
       # binding.pry
     end
 
+    # Retrieve a specific feed of event items for a Company
+    #
+    # @see http://developer.linkedin.com/reading-company-shares
+    #
+    # @param [String] update_key a update/update-key representing a
+    #   particular company update
+    # @macro company_path_options
+    # @option options [String] :event-type
+    # @option options [String] :count
+    # @option options [String] :start
+    # @return [LinkedIn::Mash]
+    def company_update(key, options={})
+      path = "#{company_path(options)}/updates/key=#{key}"
+      get(path, options)
+    end
+
     # Retrieve a feed of event items for a Company
     #
     # @see http://developer.linkedin.com/reading-company-shares
